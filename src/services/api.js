@@ -22,9 +22,7 @@ export const generateContent = async (prompt, type, contentType) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": API_KEY,
-        // To avoid CORS issues during local development
-        "Access-Control-Allow-Origin": "*",
+        "x-api-key": API_KEY
       },
       body: JSON.stringify(requestBody),
     })
