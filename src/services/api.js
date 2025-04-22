@@ -18,6 +18,7 @@ export const generateContent = async (prompt, type, contentType) => {
   }
 
   try {
+
     const response = await fetch(API_ENDPOINT, {
       method: "POST",
       headers: {

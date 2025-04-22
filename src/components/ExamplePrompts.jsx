@@ -13,25 +13,26 @@ const ExamplePrompts = ({ generationType, contentType, onExampleClick }) => {
     switch (contentType) {
       case "course_outline":
         return [
-          "Create a comprehensive course outline for 'Introduction to Artificial Intelligence'",
-          "Design a 12-week course outline for 'Web Development with React'",
-          "Develop a course outline for 'Digital Marketing Fundamentals'",
+          "Create a comprehensive course outline for 'Introduction to Artificial Intelligence' for beginners.",
+          "Design a 12-week course outline for 'Web Development with React' for intermediate learners.",
+          "Develop a course outline for 'Digital Marketing Fundamentals' for beginners.",
         ]
       case "lesson_content":
         return [
-          "Write a lesson on 'Understanding Neural Networks' for an AI course",
-          "Create a detailed lesson on 'React Hooks and State Management'",
-          "Develop a lesson on 'SEO Optimization Techniques'",
+          "Write a lesson on 'Understanding Neural Networks' for a beginner-level AI course.",
+          "Create a detailed lesson on 'React Hooks and State Management' for intermediate web developers.",
+          "Develop a lesson on 'SEO Optimization Techniques' for beginners in digital marketing.",
         ]
       case "chapter_content":
         return [
-          "Write a chapter on 'The History and Evolution of Artificial Intelligence'",
-          "Create a chapter on 'Component Architecture in Modern Web Development'",
-          "Develop a chapter on 'Content Marketing Strategies'",
+          "Write a chapter on 'The History and Evolution of Artificial Intelligence' for beginners.",
+          "Create a chapter on 'Component Architecture in Modern Web Development' for intermediate learners.",
+          "Develop a chapter on 'Content Marketing Strategies' for beginners in marketing.",
         ]
       default:
         return []
     }
+    
   }
 
   const examples = getExamples()
