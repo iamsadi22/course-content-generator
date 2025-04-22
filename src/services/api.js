@@ -18,7 +18,6 @@ export const generateContent = async (prompt, type, contentType) => {
   }
 
   try {
-
     const response = await fetch(API_ENDPOINT, {
       method: "POST",
       headers: {
@@ -42,6 +41,10 @@ export const generateContent = async (prompt, type, contentType) => {
     // For text generation, return the generated text
     if (type === "text" && data.text) {
       return data.text
+    }
+
+    if (type === "image" && Array.isArray(data.result)) {
+      return data.result[0]; // base64 image string
     }
 
     return data.result || "No content generated"

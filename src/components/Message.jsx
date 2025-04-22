@@ -5,7 +5,8 @@ const Message = ({ message }) => {
   const { role, content, timestamp, isError } = message
 
   // Handle different content types
-  const isImageContent = typeof content === "string" && content.startsWith("http") && role === "assistant"
+  const isImageContent = typeof content === "string" && content.trim().startsWith("data:image") && role === "assistant"
+  
   
   const formatCourseOutline = (raw) => {
     if (typeof raw !== 'string') return raw;
@@ -49,11 +50,6 @@ const Message = ({ message }) => {
     return `<div>${html}</div>`;
   };
   
-  
-  
-  
-  
-
   return (
     <div className={`message ${role} ${isError ? "error" : ""}`}>
       <div className="message-avatar">
@@ -68,7 +64,11 @@ const Message = ({ message }) => {
 
         <div className="message-content">
           {isImageContent ? (
-            <img src={content || "/placeholder.svg"} alt="Generated" className="generated-image" />
+            <img
+              src={content || "/placeholder.svg"}
+              alt="Generated"
+              className="generated-image"
+            />
           ) : (
             <Card className="bg-background border-none shadow-none">
               <CardContent className="prose prose-neutral dark:prose-invert pt-4">
